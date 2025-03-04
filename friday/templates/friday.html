@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= 90%, initial-scale=1.0">
+    <title>Friday</title>
+    <style>
+body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('https://i.pinimg.com/originals/ff/04/31/ff0431d11ff6b73e937280252f58f371.gif') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.9));
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 
+        0 6px 12px 0 rgba(0, 0, 0, 0.3),
+        0 8px 24px 0 rgba(0, 0, 0, 0.25),
+        inset 0 0 20px rgba(255, 255, 255, 0.5),
+        inset 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    margin-bottom: 25px;
+    font-size: 44px;
+    font-weight: 700;
+    animation: glow 3s infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.6), 0 0 35px rgba(255, 255, 255, 0.4);
+    }
+    50% {
+        text-shadow: 0 0 25px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 0.8), 0 0 45px rgba(255, 255, 255, 0.6);
+    }
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 12px;
+    color: #fff;
+    text-shadow: 0 0 7px rgba(255, 255, 255, 0.6);
+}
+
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 14px;
+    margin: 12px 0;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.3);
+}
+
+button {
+    padding: 14px 30px;
+    background: linear-gradient(145deg, #ffffff, #bbbbbb);
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 12px;
+    transition: background 0.3s, transform 0.3s;
+    display: inline-block;
+    margin-right: 12px;
+}
+
+button:hover {
+    background: linear-gradient(145deg, #bbbbbb, #ffffff);
+    transform: translateY(-2px);
+}
+
+.response {
+    margin-top: 25px;
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
+    text-align: left;
+    color: #fff;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 
+        0 8px 16px 0 rgba(0, 0, 0, 0.4),
+        0 10px 30px 0 rgba(0, 0, 0, 0.3);
+}
+
+.response p {
+    margin: 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    animation: fadeIn 0.5s;
+    box-shadow: 
+        0 4px 8px 0 rgba(0, 0, 0, 0.3),
+        0 6px 20px 0 rgba(0, 0, 0, 0.25);
+}
+
+.voice-btn {
+    display: inline-block;
+    margin-top: 12px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Friday</h1>
+        <label for="command"></label>
+        <input type="text" id="command" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;" placeholder="Enter your command" name="command" autocomplete="off">
+        <div>
+            <button onclick="submitCommand()" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">SUMBIT</button>
+            <button class="voice-btn" onclick="startVoiceRecognition()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-soundwave" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8.5 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0v-11a.5.5 0 0 1 .5-.5m-2 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5m4 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5m-6 1.5A.5.5 0 0 1 5 6v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m8 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m-10 1A.5.5 0 0 1 3 7v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5m12 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5"/>
+</svg></button>
+        </div>
+        <div class="response" id="responseArea">
+            <!-- Responses will appear here -->
+        </div>
+    </div>
+
+    <script>
+        function submitCommand() {
+            var command = document.getElementById("command").value.trim();
+            if (command !== "") {
+                sendCommand(command);
+            }
+        }
+
+        function sendCommand(command) {
+            fetch('/assistant', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ command: command })
+            })
+            .then(response => response.json())
+            .then(data => {
+                displayResponse(data.response);
+                speakResponse(data.response);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        function displayResponse(response) {
+            var responseArea = document.getElementById("responseArea");
+            var p = document.createElement("p");
+            p.textContent = response;
+            responseArea.appendChild(p);
+            responseArea.scrollTop = responseArea.scrollHeight; // Scroll to the bottom
+        }
+
+        function startVoiceRecognition() {
+            var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = 'en-US';
+            recognition.start();
+            recognition.onresult = function(event) {
+                var result = event.results[0][0].transcript;
+                document.getElementById("command").value = result;
+                sendCommand(result);
+            };
+        }
+
+        function speakResponse(response) {
+            var synth = window.speechSynthesis;
+            var utterance = new SpeechSynthesisUtterance(response);
+            utterance.lang = 'en-US';
+            synth.speak(utterance);
+        }
+    </script>
+</body>
+</html>
