@@ -1,4 +1,4 @@
-#Friday (Functional Realtime Intelligence and Data Analytics Yielder)
+# *Friday(Functional Realtime Intelligence and Data Analytics Yielder)*
 
 Friday Code is a versatile Python-based virtual assistant that integrates voice interaction, web search, multimedia processing, and system utilities. This project demonstrates how to combine multiple libraries and custom modules to create an interactive and engaging experience.
 
@@ -6,7 +6,7 @@ Friday Code is a versatile Python-based virtual assistant that integrates voice 
 
  Overview
 
-This assistant leverages a diverse set of modules to handle tasks such as:
+# This assistant leverages a diverse set of modules to handle tasks such as:
 - Voice Recognition & Speech: Capturing and processing voice commands with `speech_recognition` and converting text responses into audible speech using `pyttsx3`.
 - Time & Date Management: Using `datetime` and `pytz` for accurate time handling.
 - Information Retrieval: Fetching information from Wikipedia via the `wikipedia` module.
@@ -24,7 +24,7 @@ This assistant leverages a diverse set of modules to handle tasks such as:
 
 ---
 
- Features
+ # Features
 
 - Voice Interaction: Easily control the assistant using spoken commands.
 - Information Fetching: Get quick facts and summaries from Wikipedia.
@@ -36,9 +36,9 @@ This assistant leverages a diverse set of modules to handle tasks such as:
 
 ---
 
- Installation
+ # Installation
 
- Prerequisites
+ # *Prerequisites*
 
 - Python 3.x
 
