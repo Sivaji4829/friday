@@ -1,4 +1,4 @@
- Friday (Functional Realtime Intelligence and Analytics Yielder)
+ Friday (Functional Realtime Intelligence and Data Analytics Yielder)
 
 Friday Code is a versatile Python-based virtual assistant that integrates voice interaction, web search, multimedia processing, and system utilities. This project demonstrates how to combine multiple libraries and custom modules to create an interactive and engaging experience.
 
